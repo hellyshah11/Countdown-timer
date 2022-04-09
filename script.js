@@ -17,10 +17,13 @@ function countdown(){
     const seconds=Math.floor(totalSeconds)%60;
    
     daysEle.innerHTML=days;
-    hoursEle.innerHTML=hours;
-    minsEle.innerHTML=mins;
-    secondsEle.innerHTML=seconds;
+    hoursEle.innerHTML=formatTime(hours);
+    minsEle.innerHTML=formatTime(mins);
+    secondsEle.innerHTML=formatTime(seconds);
 }
 countdown();
 
+function formatTime(time){
+    return time<10?`0${time}`:time;
+}
 setInterval(countdown,1000);
